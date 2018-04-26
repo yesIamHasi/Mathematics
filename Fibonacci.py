@@ -1,3 +1,6 @@
+from math import sqrt
+
+
 class Fibonacci:
     def formula(self, n):
         '''Return nth fibonacci number using formula.''' 
@@ -18,15 +21,13 @@ class Fibonacci:
         fib_range = []
         if not fast:
             # Use the slower iterative formula.
-            for i in range(start, stop):
-                fib_range.append(self.iteration(i))
+            fib_range = [self.iteration(i) for i in range(start, stop)]
             return fib_range
         else:
             # Use the faster mathematical formula.
-            for i in range(start, stop):
-                fib_range.append(self.formula(i))
+            fib_range = [self.formula(i) for i in range(start,stop)]
             return fib_range
-
+ 
 if __name__ == '__main__':
     f = Fibonacci()
     print ( '10th Fibonacci Number by formula', f.formula(10))
